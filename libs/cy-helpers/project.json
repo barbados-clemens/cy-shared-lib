@@ -1,0 +1,26 @@
+{
+  "name": "cy-helpers",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/cy-helpers/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/cy-helpers",
+        "main": "libs/cy-helpers/src/index.ts",
+        "tsConfig": "libs/cy-helpers/tsconfig.lib.json",
+        "assets": ["libs/cy-helpers/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/cy-helpers/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
